@@ -10,7 +10,7 @@ const Header1 = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/login/sucess", {
+      const response = await axios.get("https://consultivaapi.vercel.app/login/sucess", {
         withCredentials: true,
       });
 
@@ -22,7 +22,7 @@ const Header1 = () => {
 
   // logoout
   const logout = () => {
-    window.open("http://localhost:8000/logout", "_self");
+    window.open("https://consultivaapi.vercel.app/logout", "_self");
   };
 
   useEffect(() => {

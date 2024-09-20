@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/login/sucess", {
+      const response = await axios.get("https://consultivaapi.vercel.app/login/sucess", {
         withCredentials: true,
       });
 

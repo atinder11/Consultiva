@@ -3,7 +3,7 @@ import "../assets/css/pagecss/Login.css";
 
 const Login = () => {
   const loginwithgoogle = () => {
-    window.open("http://localhost:8000/auth/google/callback", "_self");
+    window.open("https://consultivaapi.vercel.app/auth/google/callback", "_self");
   };
   return (
     <>
