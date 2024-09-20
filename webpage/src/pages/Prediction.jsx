@@ -156,7 +156,7 @@ const Prediction = () => {
     e.preventDefault();
     const inputArray = selectedSymptoms.map((symptom) => (symptom ? 1 : 0));
     try {
-      const response = await axios.post("http://localhost:5001/predict", {
+      const response = await axios.post("http://localhost:5002/predict", {
         input: inputArray,
       });
       console.log(response.data);
