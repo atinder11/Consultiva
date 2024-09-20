@@ -36,3 +36,5 @@ def predict():
         logging.error('Prediction error: %s', str(e))
         return jsonify({'error': 'Internal Server Error'}), 500
 
+if __name__ == '__main__':
+    app.run(debug=True)
