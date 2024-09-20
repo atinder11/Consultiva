@@ -6,9 +6,9 @@ require("./db/conn");
 
 const userdb = require("./model/userSchema");
 
-const clientid =
-  "238877709237-8c63tnd04jn43ifdgd658kgvavp35m5r.apps.googleusercontent.com";
-const clientsecret = "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";
+const clientid = process.env.GOOGLE_CLIENT_ID;
+const clientsecret = process.env.GOOGLE_CLIENT_SECRET;
+
 
 const PORT = 8000;
 
@@ -18,7 +18,7 @@ const OAuth2Strategy = require("passport-google-oauth2").Strategy;
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    "https://consultiva.vercel.app"
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -93,8 +93,8 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/dashboard",
-    failureRedirect: "http://localhost:3000/login",
+    successRedirect: "https://consultiva.vercel.app/dashboard",
+    failureRedirect: "https://consultiva.vercel.app/login",
   })
 );
 
@@ -111,7 +111,7 @@ app.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:3000");
+    res.redirect("https://consultiva.vercel.app");
   });
 });
 
