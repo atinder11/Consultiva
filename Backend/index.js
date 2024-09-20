@@ -76,20 +76,19 @@ passport.deserializeUser((user, done) => {
 });
 
 // Check connection and port
-app.get("/check", async (req, res) => {
-  try {
-    await mongoose.connection.db.admin().ping(); // Check if the database is connected
+app.get("/check", (req, res) => {
+  if (mongoose.connection.readyState === 1) {
     res.status(200).json({
       message: "Database connected",
       port: PORT,
     });
-  } catch (error) {
+  } else {
     res.status(500).json({
       message: "Database not connected",
-      error: error.message,
     });
   }
 });
+
 
 // Initial Google OAuth login
 app.get(
