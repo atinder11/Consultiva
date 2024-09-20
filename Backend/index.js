@@ -6,10 +6,6 @@ require("./db/conn");
 
 const userdb = require("./model/userSchema");
 
-const clientid =
-  "238877709237-8c63tnd04jn43ifdgd658kgvavp35m5r.apps.googleusercontent.com";
-const clientsecret = "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";
-
 const PORT = 8000;
 
 const session = require("express-session");
@@ -18,17 +14,13 @@ const OAuth2Strategy = require("passport-google-oauth2").Strategy;
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://consultiva.vercel.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
 );
 
 app.use(express.json());
-
-// app.get("/", (req, res) => {
-//   res.status(200).json("server is start");
-// });
 
 //session setup
 app.use(
@@ -40,15 +32,14 @@ app.use(
 );
 
 //setup passport
-
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(
   new OAuth2Strategy(
     {
-      clientID: clientid,
-      clientSecret: clientsecret,
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/auth/google/callback",
       scope: ["profile", "email"],
     },
@@ -84,7 +75,7 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-// initial google ouath login
+// initial google oauth login
 app.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
@@ -93,14 +84,14 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/dashboard",
-    failureRedirect: "http://localhost:3000/login",
+    successRedirect: "https://consultiva.vercel.app/dashboard",
+    failureRedirect: "https://consultiva.vercel.app/login",
   })
 );
 
-app.get("/login/sucess", async (req, res) => {
+app.get("/login/success", async (req, res) => {
   if (req.user) {
-    res.status(200).json({ message: "user Login", user: req.user });
+    res.status(200).json({ message: "User Login", user: req.user });
   } else {
     res.status(400).json({ message: "Not Authorized" });
   }
@@ -111,10 +102,10 @@ app.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:3000");
+    res.redirect("https://consultiva.vercel.app");
   });
 });
 
 app.listen(PORT, () => {
-  console.log(`server start at port no ${PORT}`);
+  console.log(`Server started at port ${PORT}`);
 });
