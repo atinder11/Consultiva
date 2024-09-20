@@ -2,11 +2,12 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const mongoose = require("mongoose"); // Ensure you import mongoose
 require("./db/conn");
 
 const userdb = require("./model/userSchema");
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const session = require("express-session");
 const passport = require("passport");
@@ -22,16 +23,16 @@ app.use(
 
 app.use(express.json());
 
-//session setup
+// Session setup
 app.use(
   session({
-    secret: "12345678",
+    secret: process.env.SESSION_SECRET || "12345678",
     resave: false,
     saveUninitialized: true,
   })
 );
 
-//setup passport
+// Setup Passport
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -41,10 +42,8 @@ passport.use(
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "https://consultivaapi.vercel.app/auth/google/callback",
-
       scope: ["profile", "email"],
     },
-
     async (accessToken, refreshToken, profile, done) => {
       try {
         let user = await userdb.findOne({ googleId: profile.id });
@@ -76,7 +75,23 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-// initial google oauth login
+// Check connection and port
+app.get("/check", async (req, res) => {
+  try {
+    await mongoose.connection.db.admin().ping(); // Check if the database is connected
+    res.status(200).json({
+      message: "Database connected",
+      port: PORT,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Database not connected",
+      error: error.message,
+    });
+  }
+});
+
+// Initial Google OAuth login
 app.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
