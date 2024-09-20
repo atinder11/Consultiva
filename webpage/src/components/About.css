@@ -1,0 +1,86 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container Styles */
+  .container-fluid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Section Styles */
+  .about {
+    padding: 80px 0;
+  }
+  
+  /* Video Box Styles */
+  .video-box {
+    position: relative;
+  }
+  
+  .video-box a.glightbox {
+    display: block;
+    background: url('path-to-your-play-button-image.png') center center no-repeat;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Icon Boxes Styles */
+  .icon-boxes {
+    background-color: #f8f9fa; /* Change the background color as needed */
+    border-radius: 10px;
+  }
+  
+  .icon-box {
+    margin-bottom: 30px;
+    text-decoration: none;
+  }
+  
+  .icon {
+    font-size: 36px;
+    color: #007bff; /* Change the icon color as needed */
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+  .a{
+    text-decoration: none;
+  }
+  /* styles.css */
+
+
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #6c757d; /* Change the description color as needed */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 991px) {
+    .icon-boxes {
+      margin-top: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .video-box,
+    .icon-boxes {
+      order: 1;
+      width: 100%;
+    }
+  }
+  

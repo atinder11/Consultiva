@@ -1,0 +1,145 @@
+/* Predict.css
+
+.predict-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.predict-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.symptom-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.symptom-checkbox label {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+}
+
+.symptom-checkbox input {
+    margin-right: 10px;
+}
+
+.predict-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.predict-button:hover {
+    background-color: #0056b3;
+}
+
+.prediction-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ffe8;
+    border: 1px solid #b2ffaf;
+    border-radius: 5px;
+}
+
+.prediction-result h2 {
+    color: #2a7a2a;
+}
+
+.prediction-result p {
+    font-size: 18px;
+    color: #333;
+} */
+
+/* Predict.css */
+
+.predict-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.predict-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.symptom-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.symptom-checkbox label {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.symptom-checkbox input {
+  margin-right: 10px;
+}
+
+.predict-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.predict-button:hover {
+  background-color: #0056b3;
+}
+
+.prediction-result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e9ffe8;
+  border: 1px solid #b2ffaf;
+  border-radius: 5px;
+}
+
+.prediction-result h2 {
+  color: #2a7a2a;
+}
+
+.prediction-result p {
+  font-size: 18px;
+  color: #333;
+}

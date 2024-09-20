@@ -1,0 +1,47 @@
+/* Services.css */
+
+/* Container Styles */
+.container {
+    padding: 40px 0;
+  }
+  
+  /* Section Title Styles */
+  .section-title h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .section-title p {
+    font-size: 18px;
+    color: #6c757d; /* Adjust the color as needed */
+    line-height: 1.6;
+  }
+  
+  /* Icon Box Styles */
+  .icon-box {
+    background-color: #ffffff; /* Adjust the background color as needed */
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .icon-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon-box .icon {
+    font-size: 36px;
+    color: #007bff; /* Adjust the icon color as needed */
+  }
+  
+  .icon-box h4 {
+    font-size: 24px;
+    margin-top: 15px;
+  }
+  
+  .icon-box p {
+    font-size: 16px;
+    color: #6c757d; /* Adjust the description color as needed */
+    line-height: 1.6;
+  }
+  

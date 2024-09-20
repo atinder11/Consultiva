@@ -1,0 +1,116 @@
+header {
+  /* margin-top: -35px; */
+  padding: 0;
+  width: 100%;
+  height: 80px;
+  background: #3291e6;
+}
+
+header nav {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav .left {
+  color: white;
+}
+
+header nav .right ul {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav .right ul li {
+  font-size: 19px;
+  text-transform: capitalize;
+  color: white;
+  cursor: pointer;
+  position: relative; /* For dropdown positioning */
+  margin-right: 20px;
+}
+
+header nav .right ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Dropdown Styles */
+header nav .right ul .dropdown ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  transform: translateX(-50%);
+  padding: 5px 5px; /* Adjust padding to make box smaller */
+  min-width: 10px; /* Adjust width to make box smaller */
+}
+
+header nav .right ul .dropdown:hover ul {
+  display: block;
+}
+
+header nav .right ul .dropdown ul li {
+  padding: 0px 1px; /* Adjust padding to make box smaller */
+}
+
+header nav .right ul .dropdown ul li a {
+  text-decoration: none;
+  color: #000;
+  white-space: nowrap; /* Ensure content doesn't wrap */
+  font-size: 14px; /* Adjust font size if needed */
+}
+
+.header1_h1 {
+  color: white;
+}
+@media (max-width: 768px) {
+  /* Adjust styles for screens smaller than 768px (e.g., tablets and mobile devices) */
+  header nav .right ul {
+    display: none; /* Hide the main navigation */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute;
+    top: 80px; /* Align below the header */
+    left: 0;
+    width: 100%;
+    background: #3291e6;
+    z-index: 1000;
+  }
+
+  header nav .right ul li {
+    margin-right: 0; /* Remove margin for stacked items */
+    width: 100%; /* Full width for dropdown items */
+    text-align: center; /* Center align text */
+  }
+
+  header nav .right ul li a {
+    padding: 15px 20px; /* Adjust padding for touch targets */
+    display: block; /* Display block for full clickable area */
+    color: white;
+    text-decoration: none;
+  }
+
+  header nav .right ul .dropdown ul {
+    position: static; /* Reset position for dropdown items */
+    display: none; /* Hide dropdown initially */
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0;
+    width: auto; /* Auto width for dropdown */
+  }
+
+  header nav .right ul .dropdown:hover ul {
+    display: block; /* Show dropdown on hover */
+  }
+}

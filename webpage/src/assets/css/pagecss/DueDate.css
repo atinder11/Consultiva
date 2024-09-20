@@ -1,0 +1,56 @@
+/* Example styles for Due Date Calculator */
+.due-date-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.due-date-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+.due-date-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.due-date-container .form-group {
+  margin-bottom: 15px;
+}
+
+.due-date-container .calculate-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.due-date-container .calculate-button:hover {
+  background-color: #0056b3;
+}
+
+.due-date-result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e9ffe8;
+  border: 1px solid #b2ffaf;
+  border-radius: 5px;
+}
+
+.due-date-result h3 {
+  color: #2a7a2a;
+}
+
+.due-date-result p {
+  font-size: 18px;
+  color: #333;
+}
