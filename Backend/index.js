@@ -2,11 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const mongoose = require("mongoose"); // Ensure you import mongoose
+const mongoose = require("mongoose");
 require("./db/conn");
-
 const userdb = require("./model/userSchema");
-
 const PORT = process.env.PORT || 8000;
 
 const session = require("express-session");
@@ -89,7 +87,6 @@ app.get("/check", (req, res) => {
   }
 });
 
-
 // Initial Google OAuth login
 app.get(
   "/auth/google",
@@ -99,19 +96,21 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "https://consultiva.vercel.app/dashboard",
     failureRedirect: "https://consultiva.vercel.app/login",
-  })
+  }),
+  (req, res) => {
+    // Successful authentication, redirect to dashboard.
+    res.redirect("https://consultiva.vercel.app/dashboard");
+  }
 );
 
-app.get("/login/success", async (req, res) => {
+app.get("/login/success", (req, res) => {
   if (req.isAuthenticated()) {
     res.status(200).json({ message: "User Login", user: req.user });
   } else {
-    res.status(400).json({ message: "Not Authorized. Please log in again." });
+    res.status(401).json({ message: "Not Authorized. Please log in again." });
   }
 });
-
 
 app.get("/logout", (req, res, next) => {
   req.logout(function (err) {
