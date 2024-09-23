@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Header1 = () => {
   const [userdata, setUserdata] = useState({});
-  
+
   const getUser = async () => {
     try {
       const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
@@ -27,64 +27,62 @@ const Header1 = () => {
   }, []);
 
   return (
-    <>
-      <header>
-        <nav>
-          <div className="left">
-            <Link to="/dashboard">
-              <h1 className="header1_h1">
-                <span>Hi</span> {userdata?.displayName}
-              </h1>
-            </Link>
-          </div>
-          <div className="right">
-            <ul>
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li className="dropdown">
-                <Link to="#">
-                  <span>Health Tool</span>
-                  <i className="bi bi-chevron-down"></i>
-                </Link>
-                <ul>
-                  <li>
-                    <Link to="/bmi" target="_blank">BMI Calculator</Link>
-                  </li>
-                  <li>
-                    <Link to="/duedate" target="_blank">Due Date Calculator</Link>
-                  </li>
-                  <li>
-                    <Link to="/smokingcost" target="_blank">Cost of Smoking Calculator</Link>
-                  </li>
-                </ul>
-              </li>
-
-              {userdata && userdata.displayName ? (
-                <>
-                  <li>
-                    <button onClick={logout} style={{ border: "none", background: "none" }}>
-                      Logout
-                    </button>
-                  </li>
-                  <li>
-                    <img
-                      src={userdata?.image}
-                      style={{ width: "50px", borderRadius: "50%" }}
-                      alt="profile"
-                    />
-                  </li>
-                </>
-              ) : (
+    <header>
+      <nav>
+        <div className="left">
+          <Link to="/dashboard">
+            <h1 className="header1_h1">
+              <span>Hi</span> {userdata?.displayName || "Guest"}
+            </h1>
+          </Link>
+        </div>
+        <div className="right">
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li className="dropdown">
+              <Link to="#">
+                <span>Health Tool</span>
+                <i className="bi bi-chevron-down"></i>
+              </Link>
+              <ul>
                 <li>
-                  <NavLink to="/login">Login</NavLink>
+                  <Link to="/bmi" target="_blank">BMI Calculator</Link>
                 </li>
-              )}
-            </ul>
-          </div>
-        </nav>
-      </header>
-    </>
+                <li>
+                  <Link to="/duedate" target="_blank">Due Date Calculator</Link>
+                </li>
+                <li>
+                  <Link to="/smokingcost" target="_blank">Cost of Smoking Calculator</Link>
+                </li>
+              </ul>
+            </li>
+
+            {userdata && userdata.displayName ? (
+              <>
+                <li>
+                  <button onClick={logout} style={{ border: "none", background: "none" }}>
+                    Logout
+                  </button>
+                </li>
+                <li>
+                  <img
+                    src={userdata?.image}
+                    style={{ width: "50px", borderRadius: "50%" }}
+                    alt="profile"
+                  />
+                </li>
+              </>
+            ) : (
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+            )}
+          </ul>
+        </div>
+      </nav>
+    </header>
   );
 };
 
