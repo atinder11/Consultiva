@@ -5,7 +5,7 @@ import Header1 from "./Header1";
 import Footer from "../components/Footer";
 
 const Dashboard = () => {
-  const [userdata, setUserdata] = useState({});
+  const [userdata, setUserdata] = useState(null); // Default to null
   const navigate = useNavigate();
 
   const getUser = async () => {
@@ -13,10 +13,10 @@ const Dashboard = () => {
       const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
         withCredentials: true,
       });
-      setUserdata(response.data.user);
+      setUserdata(response.data.user); // Set the user data on success
     } catch (error) {
       console.log("error", error);
-      navigate("/login"); // Redirect to login if error
+      navigate("/login"); // Redirect to login on error
     }
   };
 
@@ -30,12 +30,14 @@ const Dashboard = () => {
       <div className="container">
         <div style={{ textAlign: "center" }}>
           <h1>Dashboard</h1>
-          <p>Welcome back to Consultiva, {userdata.displayName || "Guest"}!</p>
+          <p>
+            Welcome back to Consultiva, {userdata?.displayName || "Guest"}!
+            {/* Use optional chaining to prevent undefined error */}
+          </p>
         </div>
       </div>
       <div className="container-fluid">
         <div className="row">
-          {/* Card 1: Predict Your Disease */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -54,7 +56,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Card 2: Health Tools */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -100,7 +101,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Card 3: Locate Nearby Hospital */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -119,7 +119,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Card 4: Contact Us */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
