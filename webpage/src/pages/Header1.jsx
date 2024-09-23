@@ -10,7 +10,7 @@ const Header1 = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("https://consultivaapi.vercel.app/login/sucess", {
+      const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
         withCredentials: true,
       });
 
