@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom"; // Import Link here
+import { useNavigate, Link } from "react-router-dom";
 import Header1 from "./Header1";
 import Footer from "../components/Footer";
 
@@ -16,7 +16,7 @@ const Dashboard = () => {
       setUserdata(response.data.user);
     } catch (error) {
       console.log("error", error);
-      navigate("/login");
+      navigate("/login"); // Redirect to login if error
     }
   };
 
@@ -35,6 +35,7 @@ const Dashboard = () => {
       </div>
       <div className="container-fluid">
         <div className="row">
+          {/* Card 1: Predict Your Disease */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -42,16 +43,18 @@ const Dashboard = () => {
                   src="https://storage.googleapis.com/kaggle-datasets-images/3309453/5755730/6cab38e4b97186fc7ad69f690cca378f/dataset-cover.jpg?t=2023-05-23-17-05-40"
                   className="card-img-top img-fluid"
                   style={{ width: "250px", height: "90px" }}
-                  alt="img"
+                  alt="Predict Disease"
                 />
               </div>
               <h2 className="card-title">Predict Your Disease</h2>
               <p className="card-text">With the help of Advanced AI offered by Consultiva</p>
-              <Link to="./prediction" className="btn btn-primary" style={{ display: "flex", justifyContent: "center" }}>
+              <Link to="/prediction" className="btn btn-primary" style={{ display: "flex", justifyContent: "center" }}>
                 Predict Now
               </Link>
             </div>
           </div>
+
+          {/* Card 2: Health Tools */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -59,11 +62,12 @@ const Dashboard = () => {
                   src="https://cdn-icons-png.freepik.com/512/4003/4003833.png"
                   className="card-img-top img-fluid"
                   style={{ width: "150px", height: "90px" }}
-                  alt="img"
+                  alt="Health Tools"
                 />
               </div>
               <h2 className="card-title">Health Tools</h2>
               <p className="card-text">We offer different types of Health tools</p>
+
               <div className="row">
                 <div className="col-md-4">
                   <div className="card">
@@ -95,6 +99,8 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
+
+          {/* Card 3: Locate Nearby Hospital */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -102,7 +108,7 @@ const Dashboard = () => {
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf_1SMuljod_k5Lo1ixooNVIP7Bw781t0w9g&s"
                   className="card-img-top img-fluid"
                   style={{ width: "150px", height: "90px" }}
-                  alt="img"
+                  alt="Hospital Locator"
                 />
               </div>
               <h2 className="card-title">Locate Nearby Hospital</h2>
@@ -112,6 +118,8 @@ const Dashboard = () => {
               </Link>
             </div>
           </div>
+
+          {/* Card 4: Contact Us */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -119,7 +127,7 @@ const Dashboard = () => {
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJf1Ey_dfINiZG5hN6tt7aYD2f9Hr7KSXU6Q&s"
                   className="card-img-top img-fluid"
                   style={{ width: "200px", height: "100px" }}
-                  alt="img"
+                  alt="Contact Us"
                 />
               </div>
               <h2 className="card-title">Contact Us</h2>
