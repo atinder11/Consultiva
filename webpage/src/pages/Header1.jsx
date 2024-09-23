@@ -6,21 +6,18 @@ import axios from "axios";
 
 const Header1 = () => {
   const [userdata, setUserdata] = useState({});
-  console.log("response", userdata);
-
+  
   const getUser = async () => {
     try {
       const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
         withCredentials: true,
       });
-
       setUserdata(response.data.user);
     } catch (error) {
       console.log("error", error);
     }
   };
 
-  // logoout
   const logout = () => {
     window.open("https://consultivaapi.vercel.app/logout", "_self");
   };
@@ -28,6 +25,7 @@ const Header1 = () => {
   useEffect(() => {
     getUser();
   }, []);
+
   return (
     <>
       <header>
@@ -51,38 +49,29 @@ const Header1 = () => {
                 </Link>
                 <ul>
                   <li>
-                    <Link to="/bmi" target="_blank">
-                      BMI Calculator
-                    </Link>
+                    <Link to="/bmi" target="_blank">BMI Calculator</Link>
                   </li>
                   <li>
-                    <Link to="/duedate" target="_blank">
-                      Due Date Calculator
-                    </Link>
+                    <Link to="/duedate" target="_blank">Due Date Calculator</Link>
                   </li>
                   <li>
-                    <Link to="/smokingcost" target="_blank">
-                      Cost of Smoking Calculator
-                    </Link>
+                    <Link to="/smokingcost" target="_blank">Cost of Smoking Calculator</Link>
                   </li>
                 </ul>
               </li>
 
-              {Object?.keys(userdata)?.length > 0 ? (
+              {userdata && userdata.displayName ? (
                 <>
-                  {/*
-                  <li style={{ color: "black", fontWeight: "bold" }}>
-                    {userdata?.displayName}
+                  <li>
+                    <button onClick={logout} style={{ border: "none", background: "none" }}>
+                      Logout
+                    </button>
                   </li>
-                  */}
-
-                  <li>{/* <NavLink to="/dashboard">Dashboard</NavLink> */}</li>
-                  <li onClick={logout}>Logout</li>
                   <li>
                     <img
                       src={userdata?.image}
                       style={{ width: "50px", borderRadius: "50%" }}
-                      alt=""
+                      alt="profile"
                     />
                   </li>
                 </>
