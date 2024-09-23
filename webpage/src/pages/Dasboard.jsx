@@ -9,16 +9,18 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const getUser = async () => {
-    try {
-      const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
-        withCredentials: true,
-      });
+  try {
+    const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
+      withCredentials: true,
+    });
 
-      console.log("response", response);
-    } catch (error) {
-      navigate("*");
-    }
-  };
+    console.log("response", response);
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    navigate("/login"); // Redirecting to login page if unauthorized
+  }
+};
+
 
   useEffect(() => {
     getUser();
@@ -32,7 +34,7 @@ const Dashboard = () => {
           <p> welcome back to consultiva</p>
         </div>
       </div>
-      <div className="conatiner container-fluid">
+      <div className="container container-fluid">
         <div className="row">
           <div className="col-sm-6">
             <div className="card">
