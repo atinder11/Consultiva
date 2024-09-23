@@ -9,17 +9,17 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const getUser = async () => {
-  try {
-    const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
-      withCredentials: true,
-    });
+    try {
+      const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
+        withCredentials: true,
+      });
+      setUserdata(response.data.user);
+    } catch (error) {
+      console.log("Error fetching user data:", error);
+      // Optionally set userdata to null or handle as needed
+    }
+  };
 
-    console.log("response", response);
-  } catch (error) {
-    console.error("Error fetching user data:", error);
-    navigate("/login"); // Redirecting to login page if unauthorized
-  }
-};
 
 
   useEffect(() => {
