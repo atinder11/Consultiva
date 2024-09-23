@@ -95,9 +95,7 @@ app.get(
 
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", {
-    failureRedirect: "https://consultiva.vercel.app/login",
-  }),
+  passport.authenticate("google", { failureRedirect: "https://consultiva.vercel.app/login" }),
   (req, res) => {
     // Successful authentication, redirect to dashboard.
     res.redirect("https://consultiva.vercel.app/dashboard");
@@ -108,7 +106,7 @@ app.get("/login/success", (req, res) => {
   if (req.isAuthenticated()) {
     res.status(200).json({ message: "User Login", user: req.user });
   } else {
-    res.status(401).json({ message: "Not Authorized. Please log in again." });
+    res.status(200).json({ message: "Not authenticated, but staying on dashboard" });
   }
 });
 
