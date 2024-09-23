@@ -105,12 +105,13 @@ app.get(
 );
 
 app.get("/login/success", async (req, res) => {
-  if (req.user) {
+  if (req.isAuthenticated()) {
     res.status(200).json({ message: "User Login", user: req.user });
   } else {
-    res.status(400).json({ message: "Not Authorized" });
+    res.status(400).json({ message: "Not Authorized. Please log in again." });
   }
 });
+
 
 app.get("/logout", (req, res, next) => {
   req.logout(function (err) {
