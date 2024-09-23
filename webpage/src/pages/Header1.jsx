@@ -6,18 +6,19 @@ import axios from "axios";
 
 const Header1 = () => {
   const [userdata, setUserdata] = useState({});
-
-  const getUser = async () => {
-    try {
-      const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
-        withCredentials: true,
-      });
+const getUser = async () => {
+  try {
+    const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
+      withCredentials: true,
+    });
+    if (response.data.user) {
       setUserdata(response.data.user);
-    } catch (error) {
-      console.log("error", error);
     }
-  };
-
+  } catch (error) {
+    console.log("User not authenticated, but staying on dashboard.", error);
+    // Optionally, you can set a flag to show an error message or handle the user state accordingly
+  }
+};
   const logout = () => {
     window.open("https://consultivaapi.vercel.app/logout", "_self");
   };
