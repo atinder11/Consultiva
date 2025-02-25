@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useAuth0, User } from "@auth0/auth0-react";
 
 function Navbar() {
+  const loginwithgoogle = () => {
+    window.open("https://consultivaapi.vercel.app/auth/google", "_self");
+  };
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -75,7 +78,7 @@ function Navbar() {
           </ul>
           <i className="bi bi-list mobile-nav-toggle"></i>
         </nav>
-        <a href="./login" target="_blank" className="appointment-btn scrollto">
+        <a href="https://consultivaapi.vercel.app/auth/google" target="_blank" className="appointment-btn scrollto">
           <span className="d-none d-md-inline">Login </span> Now
         </a>
       </div>
