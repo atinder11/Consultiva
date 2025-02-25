@@ -44,11 +44,17 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 
 ## Tech Stack
 
-**Client:** HTML, CSS, React.Js
+**Frontend:** HTML, CSS, JavaScript, React.js
 
-**Server:** Node.Js
+**Server:** Node.js, Express.js  
 
-**Backend:** Python
+**Backend:** Python, 
+
+**Database:** MongoDB  
+
+**APIs & Integrations:** REST APIs, Google Authentication, Google Maps API  
+
+
 
 
 
@@ -59,7 +65,7 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 Clone the project
 
 ```bash
-  git clone https://github.com/Dhruv-Singhal-15/Minor_sem5_grp42.git
+  git clone https://github.com/atinder11/Consultiva.git
 ```
 
 Go to the webpage directory
