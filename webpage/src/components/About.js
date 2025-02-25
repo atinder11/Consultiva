@@ -7,7 +7,7 @@ const About = () => {
         <div className="row">
           <div className="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
             {/* Replace the href with your actual video link */}
-            <a href="https://www.youtube.com/watch?v=eDmlWAaDxVg&t=66s" className="glightbox play-btn mb-4"></a>
+            <a href="https://www.youtube.com/watch?v=eDmlWAaDxVg&t=13s" className="glightbox play-btn mb-4"></a>
           </div>
           <div className="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>Stay Healthy with Consultiva: Your Favourite Online Pharmacy and Healthcare Platform</h3>

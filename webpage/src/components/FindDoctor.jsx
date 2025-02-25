@@ -6,7 +6,6 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import { Autocomplete } from "@react-google-maps/api";
-import Header1 from "../pages/Header1";
 
 const mapContainerStyle = {
   height: "500px",
@@ -61,11 +60,10 @@ const FindDoctorMap = () => {
   return (
     <>
       <LoadScript
-        googleMapsApiKey="AIzaSyAVTcUKRj2qcVI6ZY5zTAkkR-1jubl-6LQ"
+        googleMapsApiKey="AIzaSyCUIZF_8fl-mFV0i4EI3lDA2d4DBdSMEME"
         libraries={["places"]}
       >
         <div>
-          <Header1 />
           <h1 className="text-center my-4">Find the Hospitals</h1>
           <div className="container container-fluid">
             <div className="row justify-content-center">

@@ -12,6 +12,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "./components/main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'boxicons/css/boxicons.min.css';
+
 import Doctor from "./components/Doctor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faHeart } from "@fortawesome/free-solid-svg-icons";

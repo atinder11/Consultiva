@@ -5,24 +5,25 @@ import Header1 from "./Header1";
 import Footer from "../components/Footer";
 
 const Dashboard = () => {
-  const [userdata, setUserdata] = useState(null); // Default to null
+  const [userdata, setUserdata] = useState(null);
   const navigate = useNavigate();
 
-  const getUser = async () => {
-    try {
-      const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
-        withCredentials: true,
-      });
-      setUserdata(response.data.user); // Set the user data on success
-    } catch (error) {
-      console.log("error", error);
-      navigate("/login"); // Redirect to login on error
-    }
-  };
-
   useEffect(() => {
-    getUser();
-  }, []);
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get("https://consultivaapi.vercel.app/login/success", {
+          withCredentials: true,
+        });
+        setUserdata(response.data.user);
+      } catch (error) {
+        console.log("error", error);
+        navigate("/login");
+      }
+    };
+  
+    fetchUser();
+  }, [navigate]);
+  
 
   return (
     <>
@@ -30,10 +31,7 @@ const Dashboard = () => {
       <div className="container">
         <div style={{ textAlign: "center" }}>
           <h1>Dashboard</h1>
-          <p>
-            Welcome back to Consultiva, {userdata?.displayName || "Guest"}!
-            {/* Use optional chaining to prevent undefined error */}
-          </p>
+          <p>Welcome back to Consultiva, {userdata?.displayName || "Guest"}!</p>
         </div>
       </div>
       <div className="container-fluid">

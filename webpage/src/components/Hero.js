@@ -1,5 +1,4 @@
-// Hero.js
-import React from 'react';
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Hero() {
@@ -8,7 +7,9 @@ function Hero() {
       <div className="container">
         <h1>Welcome to Consultiva</h1>
         <h2>Consult India's Top Doctors Online, Safely From Home.</h2>
-        <a href="#about" className="btn-get-started scrollto">Get Started</a>
+        <a href="#about" className="h1 btn-get-started scrollto">
+          Get Started
+        </a>
       </div>
     </section>
   );

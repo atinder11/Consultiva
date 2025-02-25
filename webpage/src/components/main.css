@@ -456,13 +456,19 @@ h6 {
   width: 100%;
   height: 90vh;
   background: url("../assets/img/hero-bg.jpg") top center;
-
   background-size: cover;
   margin-bottom: -200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5%; /* Adjust this value as needed */
 }
 
 #hero .container {
   position: relative;
+  text-align: left;
+  max-width: 800px; /* Reduce width to keep content compact */
+  margin-left: -50px; /* Move it more left */
 }
 
 #hero h1 {
@@ -482,6 +488,7 @@ h6 {
 
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
+  
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;

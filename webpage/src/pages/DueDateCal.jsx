@@ -7,43 +7,25 @@ const DueDateCal = () => {
   const [cycleLength, setCycleLength] = useState(28);
   const [dueDate, setDueDate] = useState("");
 
-  const handleDateChange = (e) => {
-    setLastPeriodDate(e.target.value);
-  };
   useEffect(() => {
-    document.title = "Due Date Calculator";
-    if (dueDate) {
-      document.title = `Due Date: ${dueDate}`;
-    }
+    document.title = dueDate ? `Due Date: ${dueDate}` : "Due Date Calculator";
   }, [dueDate]);
 
-  const handleCycleLengthChange = (e) => {
-    setCycleLength(parseInt(e.target.value));
-  };
+  const handleDateChange = (e) => setLastPeriodDate(e.target.value);
+  const handleCycleLengthChange = (e) => setCycleLength(parseInt(e.target.value));
 
   const calculateDueDate = (e) => {
     e.preventDefault();
-    if (lastPeriodDate && cycleLength) {
-      const dueDateResult = calculateDueDateFunction(
-        lastPeriodDate,
-        cycleLength
-      );
-      setDueDate(dueDateResult);
+    if (lastPeriodDate) {
+      const date = new Date(lastPeriodDate);
+      date.setDate(date.getDate() + 280 - (28 - cycleLength));
+      setDueDate(date.toDateString());
     }
-  };
-
-  const calculateDueDateFunction = (lastPeriodDate, cycleLength) => {
-    const date = new Date(lastPeriodDate);
-    date.setDate(date.getDate() + cycleLength);
-    return date.toDateString();
   };
 
   return (
     <>
-      <section
-        id="due-date-calculator"
-        className="p-5 d-flex justify-content-center"
-      >
+      <section className="p-5 d-flex justify-content-center">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-6 text-center">
@@ -52,7 +34,7 @@ const DueDateCal = () => {
                 <div className="form-group">
                   <br />
                   <label htmlFor="lastPeriodDate">
-                    When was the first day of your last period?
+                    First day of your last period:
                   </label>
                   <input
                     type="date"
@@ -65,7 +47,7 @@ const DueDateCal = () => {
                 </div>
                 <br />
                 <div className="form-group">
-                  <label htmlFor="cycleLength">Cycle length in days</label>
+                  <label htmlFor="cycleLength">Cycle length (days):</label>
                   <input
                     type="number"
                     id="cycleLength"
@@ -82,7 +64,10 @@ const DueDateCal = () => {
               </form>
               {dueDate && (
                 <div className="mt-4">
-                  <h4>Your Due Date is: {dueDate}</h4>
+                  <h4><b>
+
+                 Your Due Date is: {dueDate} 
+                 </b> </h4>  
                 </div>
               )}
             </div>
@@ -91,30 +76,66 @@ const DueDateCal = () => {
       </section>
 
       <div className="container container-fluid">
-        <h3>What is Due Date Calculator </h3>
+        <h3>
+        <b>Understanding Your Due Date
+        </b></h3>
         <p>
-          The calculator on this page can help you work out when you might
-          expect your baby to arrive.
-          <br />
-          When was the first day of your last period? For example, 15 1 2024
-          Some women's cycles are not exactly 28 days. Adjust the cycle length
-          if your cycle is shorter or longer than 28 days.
-          <br />
+        
+          The due date is an estimated date when a pregnant woman is expected 
+          to give birth. This is calculated based on the first day of the last 
+          menstrual period (LMP) and the average pregnancy duration of 280 days 
+          (or 40 weeks).
         </p>
-        <h5>Using the due date calculator</h5>
 
+        <h5>How the Due Date is Calculated</h5>
         <p>
-          To find your due date, enter the date of the first day of your last
-          period, and select 'show your due date'. Pregnancy normally lasts from
-          37 weeks to 42 weeks from the first day of your last period.
-          <br />
-          You need to know the first day of your last period to use this
-          calculator. If you do not know it or are unsure, speak to a midwife or
-          GP.
-          <br />
-          As part of your pregnancy (antenatal) care, your midwife will offer
-          you a 12-week scan that may give you a more accurate date for the
-          birth of your baby.
+          - The standard method adds 280 days (40 weeks) to the first day 
+          of your last period.<br />
+          - If your menstrual cycle is longer or shorter than 28 days, the 
+          calculation adjusts accordingly.<br />
+          - This estimation is based on the assumption that ovulation happens 
+          14 days after the start of your last period.<br />
+          - The due date is not always exact, as only 4-5% of babies are 
+          born on their predicted due date.
+        </p>
+
+        <h5>Why Is the Due Date Important?</h5>
+        <p>
+          The estimated due date is crucial for:<br />
+          - Tracking fetal growth: Doctors use it to monitor the baby’s 
+          development through ultrasounds and prenatal checkups.<br />
+          - Scheduling prenatal care: Regular checkups ensure a healthy 
+          pregnancy and help detect any potential complications early.<br />
+          - Planning for labor and delivery: It helps parents prepare for 
+          childbirth and ensure they have necessary arrangements in place.
+        </p>
+
+        <h5>Factors That Can Affect the Due Date</h5>
+        <p>
+          Although the due date provides a useful estimate, several factors can 
+          influence when the baby is actually born:<br />
+          - Irregular menstrual cycles: Women with cycles longer or shorter 
+          than 28 days may ovulate earlier or later.<br />
+          - First-time pregnancies: First-time mothers may deliver closer 
+          to 41 weeks.<br />
+          - Previous pregnancies: Women who have given birth before may 
+          have slightly different timelines.<br />
+          - Ultrasound adjustments: A dating scan in the first trimester 
+          can give a more precise due date.<br />
+          - Multiple pregnancies: Twins or triplets may be born earlier 
+          than a single baby.
+        </p>
+
+        <h5>What If the Due Date Passes?</h5>
+        <p>
+          If the due date passes without labor starting, doctors usually monitor 
+          the pregnancy closely. Some possible next steps include:<br />
+          - Waiting for spontaneous labor (most babies arrive within two 
+          weeks of the due date).<br />
+          - Scheduling an induction if the pregnancy goes beyond 41-42 weeks.<br />
+          - Additional tests like ultrasounds and fetal monitoring to 
+          ensure the baby's health.<br />
+          If you are past your due date, consult your doctor for guidance.
         </p>
       </div>
 
