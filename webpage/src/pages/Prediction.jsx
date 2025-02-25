@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
 import "../assets/css/pagecss/Prediction.css";
-
 import axios from "axios";
 import Header1 from "./Header1";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const symptoms = [
   "itching",
@@ -141,9 +140,7 @@ const symptoms = [
 ];
 
 const Prediction = () => {
-  const [selectedSymptoms, setSelectedSymptoms] = useState(
-    new Array(symptoms.length).fill(false)
-  );
+  const [selectedSymptoms, setSelectedSymptoms] = useState(new Array(symptoms.length).fill(false));
   const [prediction, setPrediction] = useState(null);
 
   const handleChange = (index) => {
@@ -159,9 +156,7 @@ const Prediction = () => {
       const response = await axios.post("https://consultivapredict.onrender.com/predict", {
         input: inputArray,
       });
-      console.log(response.data);
       setPrediction(response.data.predicted_disease);
-      //console.log('Prediction:', response.data.predicted_disease);
     } catch (error) {
       console.error("Error predicting disease:", error);
     }
@@ -170,8 +165,10 @@ const Prediction = () => {
   return (
     <>
       <Header1 />
-      <div className="conatiner container-fluid">
-        <h1>Disease Prediction</h1>
+      <div className="container container-fluid">
+        <br />
+        <h1><b>Disease Prediction</b></h1>
+
         <div className="row justify-content-center">
           <div className="col-md-6">
             <form className="predict-form" onSubmit={handleSubmit}>
@@ -188,23 +185,16 @@ const Prediction = () => {
                 </div>
               ))}
               <br />
-              <button className="btn btn-primary" type="submit">
-                Predict
-              </button>
+              <button className="btn btn-primary" type="submit">Predict</button>
             </form>
           </div>
         </div>
 
         {prediction && (
-          <div
-            className="container container-fluid"
-            style={{ textAlign: "center" }}
-          >
+          <div className="container container-fluid" style={{ textAlign: "center" }}>
             <br />
             <h2 style={{ color: "green" }}>Prediction Result</h2>
-            <h4>
-              <strong style={{ color: "red" }}>Disease:</strong> {prediction}
-            </h4>
+            <h4><strong style={{ color: "red" }}>Disease:</strong> {prediction}</h4>
             <br />
           </div>
         )}
