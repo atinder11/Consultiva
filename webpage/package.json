@@ -17,6 +17,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.2",
     "boxicons": "^2.1.4",
+    "dotenv": "^16.4.7",
     "eslint-plugin-react": "^7.33.2",
     "minimist": "^1.2.8",
     "passport-google-oauth2": "^0.2.0",

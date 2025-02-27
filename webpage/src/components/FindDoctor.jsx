@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from "react";
 import {
   GoogleMap,
@@ -60,7 +61,7 @@ const FindDoctorMap = () => {
   return (
     <>
       <LoadScript
-        googleMapsApiKey="AIzaSyCUIZF_8fl-mFV0i4EI3lDA2d4DBdSMEME"
+        googleMapsApiKey="AIzaSyDdxxqlAXwH6UGl3TzgyAr2Rw3gppU1C80"
         libraries={["places"]}
       >
         <div>
