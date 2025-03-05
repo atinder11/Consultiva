@@ -202,7 +202,7 @@ const Prediction = () => {
           <div className="container container-fluid" style={{ textAlign: "center" }}>
             <br />
             <h2 style={{ color: "green" }}>Prediction Result</h2>
-            <h4><strong style={{ color: "red" }}>Disease:</strong> {prediction}</h4>
+            <h4><strong style={{ color: "red" }}>Disease:</strong> {prediction.replace(/_/g, " ")}</h4>
            
             <br />
           </div>
