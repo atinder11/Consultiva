@@ -30,6 +30,7 @@ import SmokingCostCalculator from "./pages/SmokingCostCalculator";
 import FindDoctor from "./components/FindDoctor";
 import Contact from "./components/Contact";
 
+
 function App() {
   return (
     <>
@@ -48,7 +49,11 @@ function App() {
             <Route path="/findhospital" element={<FindDoctor />} />
             <Route path="/index.html" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
+            
+            
+
             <Route path="*" element={<Nopage />} />
+            
           </Routes>
         </BrowserRouter>
       </div>
