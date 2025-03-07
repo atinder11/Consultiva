@@ -17,6 +17,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.2",
     "boxicons": "^2.1.4",
+    "caniuse-lite": "^1.0.30001702",
     "dotenv": "^16.4.7",
     "eslint-plugin-react": "^7.33.2",
     "minimist": "^1.2.8",

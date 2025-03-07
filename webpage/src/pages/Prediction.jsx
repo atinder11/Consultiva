@@ -145,6 +145,7 @@ const Prediction = () => {
     new Array(symptoms.length).fill(false)
   );
   const [prediction, setPrediction] = useState(null);
+  const [description, setDescription] = useState(null); // Added description state
 
   const handleChange = (index) => {
     const updatedSymptoms = [...selectedSymptoms];
@@ -156,12 +157,11 @@ const Prediction = () => {
     e.preventDefault();
     const inputArray = selectedSymptoms.map((symptom) => (symptom ? 1 : 0));
     try {
-      const response = await axios.post("https://consultivapredict.onrender.com/predict", {
+      const response = await axios.post("http://127.0.0.1:5000/predict", {
         input: inputArray,
       });
-      console.log(response.data);
       setPrediction(response.data.predicted_disease);
-      //console.log('Prediction:', response.data.predicted_disease);
+      setDescription(response.data.description); // Set description
     } catch (error) {
       console.error("Error predicting disease:", error);
     }
@@ -205,6 +205,7 @@ const Prediction = () => {
             <h4>
               <strong style={{ color: "red" }}>Disease:</strong> {prediction.replace(/_/g, " ")}
             </h4>
+            {description && <p>{description}</p>}
             <br />
           </div>
         )}
@@ -214,3 +215,5 @@ const Prediction = () => {
 };
 
 export default Prediction;
+
+

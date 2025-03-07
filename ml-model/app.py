@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Load disease descriptions from CSV
 disease_data = pd.read_csv("disease_description.csv")  # Ensure this file exists
-disease_dict = dict(zip(disease_data["disease"], disease_data["description"]))  # Create a mapping
+disease_dict = dict(zip(disease_data["Disease"], disease_data["Description"]))  # Create a mapping
 
 # Define the prediction endpoint
 @app.route('/predict', methods=['POST'])
