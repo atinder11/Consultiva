@@ -157,7 +157,7 @@ const Prediction = () => {
     e.preventDefault();
     const inputArray = selectedSymptoms.map((symptom) => (symptom ? 1 : 0));
     try {
-      const response = await axios.post("http://127.0.0.1:5000/predict", {
+      const response = await axios.post("https://consultivapredict.onrender.com/predict", {
         input: inputArray,
       });
       setPrediction(response.data.predicted_disease);
