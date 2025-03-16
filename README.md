@@ -11,7 +11,8 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 
 ## Screenshots:
 **Home Page:**
-![image](https://github.com/user-attachments/assets/903af529-ab61-427e-bc17-16908fe75e46)
+![image](https://github.com/user-attachments/assets/dc7cec8d-de84-407a-b7e9-ae6c224ccae4)
+
 
 **Login Page:**
 ![image](https://github.com/user-attachments/assets/0903b429-9572-47d1-8349-060101ea196a)
