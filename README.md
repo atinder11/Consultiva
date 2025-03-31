@@ -20,7 +20,8 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 **DashBoard:**
 ![image](https://github.com/user-attachments/assets/79e96f5f-bfa8-4737-88d1-bfc6eceeb6b6)
 
-![image](https://github.com/user-attachments/assets/b42bb0ca-8dda-47ab-96ad-226b41dd4949)
+![image](https://github.com/user-attachments/assets/40511abf-d2b0-4a63-bff3-4e9716f07a17)
+
 
 **Prediction Page:**
 ![image](https://github.com/user-attachments/assets/6a28007e-6e93-4a90-8a1d-d112dd2fc5a6)
@@ -53,12 +54,11 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 
 **Server:** Node.js, Express.js  
 
-**Backend:** Python, 
+**Backend:** Python
 
 **Database:** MongoDB  
 
-**APIs & Integrations:** REST APIs, Google Authentication, Google Maps API  
-
+**APIs & Integrations:** REST APIs, Gemini API, Google Auth, Google Maps API
 
 
 
