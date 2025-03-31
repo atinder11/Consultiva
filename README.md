@@ -18,15 +18,18 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 ![image](https://github.com/user-attachments/assets/0903b429-9572-47d1-8349-060101ea196a)
 
 **DashBoard:**
-![image](https://github.com/user-attachments/assets/79e96f5f-bfa8-4737-88d1-bfc6eceeb6b6)
+![image](https://github.com/user-attachments/assets/653d1b7b-ac44-4214-a450-065915796e46)
+
 
 ![image](https://github.com/user-attachments/assets/40511abf-d2b0-4a63-bff3-4e9716f07a17)
 
 
 **Prediction Page:**
-![image](https://github.com/user-attachments/assets/6a28007e-6e93-4a90-8a1d-d112dd2fc5a6)
+![image](https://github.com/user-attachments/assets/8e0543f7-6735-4141-a931-7dd47b17c564)
 
-![image](https://github.com/user-attachments/assets/beba25f9-9967-4358-8cd0-c31db0b45165)
+
+![image](https://github.com/user-attachments/assets/78dd810d-6555-42c9-80a1-7c77e67b72d8)
+
 
 **GenAI Based Prevention Measures:**
 ![image](https://github.com/user-attachments/assets/db465cab-e873-4b94-8d38-a466dfe06007)
