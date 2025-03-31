@@ -23,7 +23,7 @@ const Prediction = () => {
   const fetchPrevention = async (disease) => {
     setLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:5000/gemini", { disease }, {
+      const response = await axios.post("https://consultivapredict.onrender.com/gemini", { disease }, {
         headers: { "Content-Type": "application/json" }
       });
       setPrevention(response.data.prevention);
@@ -38,7 +38,7 @@ const Prediction = () => {
     e.preventDefault();
     const inputArray = selectedSymptoms.map((symptom) => (symptom ? 1 : 0));
     try {
-      const response = await axios.post("http://127.0.0.1:5000/predict", { input: inputArray });
+      const response = await axios.post("https://consultivapredict.onrender.com/predict", { input: inputArray });
       setPrediction(response.data.predicted_disease);
       setDescription(response.data.description);
       fetchPrevention(response.data.predicted_disease);
