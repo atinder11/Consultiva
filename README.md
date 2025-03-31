@@ -34,9 +34,12 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 
 
 **Loacte Nearby Hospital:**
-![image](https://github.com/user-attachments/assets/249857d1-c19f-47c5-bd61-5af64b299ff6)
+![image](https://github.com/user-attachments/assets/77d41627-dfe1-4177-8aa9-6085df6969b2)
 
-![image](https://github.com/user-attachments/assets/dda2ad8d-3d54-4d06-996a-eb981661f33b)
+
+![image](https://github.com/user-attachments/assets/9a992996-a9aa-44f6-a718-a590b0d6790c)
+
+
 
 
 
