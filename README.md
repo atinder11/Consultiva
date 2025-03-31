@@ -7,7 +7,7 @@ By leveraging secure and accessible online channels, Consultiva seeks to bridge 
  
 ## Our Commitment
 
-In the landscape of healthcare, where the demand for accessible and efficient medical services meets the transformative power of digital technology, the "Consultiva" project emerges as a beacon of innovation. In an age characterized by the pervasive influence of the internet, Consultiva seeks to revolutionize the way individuals access and engage with healthcare service
+In the landscape of healthcare, where the demand for accessible and efficient medical services meets the transformative power of digital technology and world, the "Consultiva" project emerges as a beacon of innovation. In an age characterized by the pervasive influence of the internet, Consultiva seeks to revolutionize the way individuals access and engage with healthcare service
 
 ## Screenshots:
 **Home Page:**
