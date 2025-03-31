@@ -27,6 +27,10 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 
 ![image](https://github.com/user-attachments/assets/beba25f9-9967-4358-8cd0-c31db0b45165)
 
+**GenAI Based Prevention Measures:**
+![image](https://github.com/user-attachments/assets/db465cab-e873-4b94-8d38-a466dfe06007)
+
+
 
 **Loacte Nearby Hospital:**
 ![image](https://github.com/user-attachments/assets/249857d1-c19f-47c5-bd61-5af64b299ff6)
