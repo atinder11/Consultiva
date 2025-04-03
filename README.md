@@ -25,14 +25,25 @@ In the landscape of healthcare, where the demand for accessible and efficient me
 
 
 **Prediction Page:**
-![image](https://github.com/user-attachments/assets/8e0543f7-6735-4141-a931-7dd47b17c564)
+![image](https://github.com/user-attachments/assets/9ae4f43d-3024-472a-b9a1-8a8aaa327785)
 
 
-![image](https://github.com/user-attachments/assets/78dd810d-6555-42c9-80a1-7c77e67b72d8)
+
+![image](https://github.com/user-attachments/assets/bc7c0c7c-971b-4a2e-9b21-0cfab07cbaea)
+
+
 
 
 **GenAI Based Prevention Measures:**
-![image](https://github.com/user-attachments/assets/db465cab-e873-4b94-8d38-a466dfe06007)
+![image](https://github.com/user-attachments/assets/29be6ed7-34fa-4ce1-8fdf-5587673a07a9)
+
+**GenAI Based Diet & Lifestyle Recommendations:**
+![image](https://github.com/user-attachments/assets/676ea1b3-6373-48bc-807c-273198121571)
+![image](https://github.com/user-attachments/assets/d78f56b2-15dd-47c5-b9d1-77c158399b95)
+![image](https://github.com/user-attachments/assets/64213b60-3c30-4479-87f6-bcb2533d1777)
+![image](https://github.com/user-attachments/assets/b5b92838-f945-4aeb-bea3-a705ed4828fe)
+
+
 
 
 
