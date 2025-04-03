@@ -296,7 +296,7 @@ const Prediction = () => {
           <div className="results-container ">
             <div className="result-section diagnosis-section">
               <h1 className="text-center ">
-                Result: <b className="text-danger text-strong">{result.disease.replace(/_/g, " ")}</b>
+              Disease: <b className="text-danger text-strong">{result.disease.replace(/_/g, " ")}</b>
               </h1>
               <div className="description">{formatText(result.description)}</div>
             </div>
