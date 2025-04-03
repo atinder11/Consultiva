@@ -1,192 +1,85 @@
-/* Predict.css
-
-.predict-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Recommendations Styling */
+.recommendations-content {
+  margin-top: 10px;
 }
-
-h1 {
-    text-align: center;
-    color: #333;
+.search-bar{
+  display: flex;
+  justify-content: center;
 }
-
-.predict-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.symptom-checkbox {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.symptom-checkbox label {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    color: #555;
-}
-
-.symptom-checkbox input {
-    margin-right: 10px;
-}
-
-.predict-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.predict-button:hover {
-    background-color: #0056b3;
-}
-
-.prediction-result {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #e9ffe8;
-    border: 1px solid #b2ffaf;
-    border-radius: 5px;
-}
-
-.prediction-result h2 {
-    color: #2a7a2a;
-}
-
-.prediction-result p {
-    font-size: 18px;
-    color: #333;
-} */
-
-/* Predict.css */
-
-.predict-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
+input[type="text"] {
+  width: 80%; /* Adjust this value to reduce or increase the size */
+  max-width: 600px; /* Optional: limit the maximum width */
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-  
+/* Centering the Checkbox Items */
+
+
+
+
+.recommendation-title {
   font-weight: bold;
+  margin: 15px 0 5px 0;
+  color: #2c3e50;
+  font-size: 1.1em;
 }
 
-.predict-form {
+.recommendation-item {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
-.symptom-list {
-  max-height: 300px;
-  overflow-y: auto;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.symptom-checkbox {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-}
-
-.symptom-checkbox:last-child {
-  border-bottom: none;
-}
-
-.symptom-checkbox label {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  
-  cursor: pointer;
-}
-
-.symptom-checkbox input {
+.bullet {
+  color: #3498db;
   margin-right: 10px;
-  cursor: pointer;
-}
-
-.predict-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.predict-button:hover {
-  background-color: #0056b3;
-}
-
-.prediction-result {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #e9ffe8;
-  border: 1px solid #b2ffaf;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.prediction-result h2 {
-  color: #2a7a2a;
-  font-size: 22px;
-}
-
-.prediction-result p {
-  font-size: 18px;
- 
-}
-
-.prevention-container {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-radius: 8px;
-  
-  max-width: 600px;
-  margin: auto;
-}
-
-.prevention-title {
-  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  
 }
 
-.prevention-list {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+.recommendation-text {
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
-.prevention-item {
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-  font-weight: 500;
-  
+/* Loading Spinner */
+.spinner-border {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: text-bottom;
+  border: 0.15em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
 }
 
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+
+/* Symptoms Styling */
+.form-check {
+  margin-bottom: 10px;
+  display: block; /* Ensures each symptom appears on a new line */
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.form-check-label {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Remove grid layout and ensure symptoms stack vertically */
+  .form-check {
+    margin-bottom: 15px;
+  }
+}
