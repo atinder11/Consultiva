@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import Header1 from "../pages/Header1";
 import {
   GoogleMap,
   LoadScript,
@@ -47,8 +48,13 @@ const FindDoctorMap = () => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDdxxqlAXwH6UGl3TzgyAr2Rw3gppU1C80" libraries={["places"]}>
+    <LoadScript
+  googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+  libraries={["places"]}
+>
+
       <div>
+      <Header1 />
         <h1 className="text-center my-4">Find Nearby Hospitals</h1>
         <div className="container">
           <div className="row justify-content-center">
@@ -141,3 +147,4 @@ const FindDoctorMap = () => {
 };
 
 export default FindDoctorMap;
+
